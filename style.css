@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #343a40;
+    --secondary-color: #f8f9fa;
+
+}
+
+html {
+    transition: all 0.6s ease-in;
+}
+
+html.dark {
+    --primary-color: #ced4da;
+    --secondary-color: #212529;
+}
+
+html.dark {
+    background-color: #212529;
+    color: var(--primary-color);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+}
+
+.toggle {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 0;
+    padding: 8px 12px;
+    border-radius: 4px;
+    position: absolute;
+    top: 50px;
+    cursor: pointer;
+}
+
+.toggle:focus{
+    outline: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.needle {
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 65px;
+    width: 3px;
+    transform-origin: bottom center;
+}
+
+.needle.hour {
+    transform : translate(-50%,-100%) rotate(0deg);
+}
+
+.needle.minute{
+    transform : translate(-50%,-100%) rotate(0deg);
+    height: 100px;
+}
+
+.needle.second {
+    transform : translate(-50%,-100%) rotate(0deg);
+    height: 100px;
+    background-color: #c1121f;
+}
+
+.center-point {
+    background-color: #c1121f;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform : translate(-50%,-50%);
+}
+.center-point::after {
+    content: '';
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform : translate(-50%,-50%);
+}
+
+.time{
+    font-size: 60px;
+}
+
+.date {
+    color: #6c757d;
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+.date .circle{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 18px;
+    font-size: 12px;
+    transition: all 0.6s ease-in;
+}
